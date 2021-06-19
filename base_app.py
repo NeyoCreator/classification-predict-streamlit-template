@@ -41,16 +41,16 @@ def main():
 
 	# Creates a main title and subheader on your page -
 	# these are static across all pages
-	st.title("Tweet Classifer")
-	st.subheader("Climate change tweet classification")
+	st.title("Thuto")
+	st.subheader("Educating ourselves through people")
 
 	# Creating sidebar with selection box -
 	# you can create multiple pages this way
-	options = ["Prediction", "Information"]
+	options = ["Logistic Regression", "OnevsRest classifier"]
 	selection = st.sidebar.selectbox("Choose Option", options)
 
 	# Building out the "Information" page
-	if selection == "Information":
+	if selection == "Logistic Regression":
 		st.info("General Information")
 		# You can read a markdown file from supporting resources folder
 		st.markdown("Some information here")
@@ -60,24 +60,45 @@ def main():
 			st.write(raw[['sentiment', 'message']]) # will write the df to the page
 
 	# Building out the predication page
-	if selection == "Prediction":
+	if selection == "OnevsRest classifier":
 		st.info("Prediction with ML Models")
 		# Creating a text box for user input
 		tweet_text = st.text_area("Enter Text","Type Here")
 
 		if st.button("Classify"):
 			# Transforming user input with vectorizer
-			vect_text = tweet_cv.transform([tweet_text]).toarray()
+			#vect_text = tweet_cv.transform([tweet_text]).toarray()
+			tweet_text = [tweet_text]
 			# Load your .pkl file with the model of your choice + make predictions
 			# Try loading in multiple models to give the user a choice
-			predictor = joblib.load(open(os.path.join("resources/Logistic_regression.pkl"),"rb"))
-			prediction = predictor.predict(vect_text)
-
+			predictor = joblib.load(open(os.path.join("resources/log_regression.pkl"),"rb"))
+			prediction = predictor.predict(tweet_text)
+			st.image('img.jpg', width=200)
 			# When model has successfully run, will print prediction
 			# You can use a dictionary or similar structure to make this output
 			# more human interpretable.
-			st.success("Text Categorized as: {}".format(prediction))
+			#st.success("Text Categorized as: {}".format(prediction))
 
+			st.title(prediction[0])
+
+			if (prediction[0] == -1) :
+				st.title("does'nt believe climate change")
+				#st.image('img.jpg', width=60)
+				
+				
+			elif (prediction[0] == 0) :
+				#st.image('img.jpg', width=60)
+				st.title("neutral")
+				
+			else :
+				#st.image('img.jpg', width=60)
+				st.title("believes in climate")
+				
 # Required to let Streamlit instantiate our web app.  
 if __name__ == '__main__':
 	main()
+
+#streamlit run base_app.py
+#donald  trump appears in fake news
+
+
