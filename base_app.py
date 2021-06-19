@@ -42,7 +42,7 @@ def main():
 	# Creates a main title and subheader on your page -
 	# these are static across all pages
 	st.title("Thuto")
-	st.subheader("Educating ourselves through people")
+	st.subheader("Predic belives climate change")
 
 	# Creating sidebar with selection box -
 	# you can create multiple pages this way
@@ -61,9 +61,9 @@ def main():
 
 	# Building out the predication page
 	if selection == "OnevsRest classifier":
-		st.info("Prediction with ML Models")
+		#st.info("Prediction with ML Models")
 		# Creating a text box for user input
-		tweet_text = st.text_area("Enter Text","Type Here")
+		tweet_text = st.text_area("","Enter recent tweet")
 
 		if st.button("Classify"):
 			# Transforming user input with vectorizer
@@ -73,26 +73,32 @@ def main():
 			# Try loading in multiple models to give the user a choice
 			predictor = joblib.load(open(os.path.join("resources/log_regression.pkl"),"rb"))
 			prediction = predictor.predict(tweet_text)
-			st.image('img.jpg', width=200)
+			#st.image('hybrid1.2.png', width=500)
 			# When model has successfully run, will print prediction
 			# You can use a dictionary or similar structure to make this output
 			# more human interpretable.
 			#st.success("Text Categorized as: {}".format(prediction))
 
-			st.title(prediction[0])
+			#st.title(prediction[0])
 
 			if (prediction[0] == -1) :
-				st.title("does'nt believe climate change")
-				#st.image('img.jpg', width=60)
+				st.title("Gas cars avaialable")
+				st.image('a1.png', width=500)
+				st.image('a2.png', width=500)
+				st.image('a3.png', width=500)
 				
 				
-			elif (prediction[0] == 0) :
-				#st.image('img.jpg', width=60)
-				st.title("neutral")
+			elif (prediction[0]==0) :
+				st.title("Hybrid cars avaialable")
+				st.image('h2.png', width=500)
+				st.image('h3.png', width=500)
 				
 			else :
 				#st.image('img.jpg', width=60)
-				st.title("believes in climate")
+				st.subheader("Available electric cars")
+				st.image('p1.png', width=500)
+				st.image('h2.png', width=500)
+				st.image('h3.png', width=500)
 				
 # Required to let Streamlit instantiate our web app.  
 if __name__ == '__main__':
@@ -101,4 +107,7 @@ if __name__ == '__main__':
 #streamlit run base_app.py
 #donald  trump appears in fake news
 
+#-1 Sally Kohn’s latest evidence of climate change proves she is ‘not a smart person’ https://t.co/MhkzoGL9Vt via @twitchyteam Need we say more
+#0 Calum: *tweets abt reunitingish w the cast*\n-sees replies begging him to come to their countries-\nCalum: *goes back to rting climate change*
+# 2 researchers have three years climate change before it s late urlweb urlweb
 
