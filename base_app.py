@@ -90,6 +90,7 @@ def main():
 				
 			elif (prediction[0]==0) :
 				st.title("Hybrid cars avaialable")
+				st.image('h1.png', width=500)
 				st.image('h2.png', width=500)
 				st.image('h3.png', width=500)
 				
@@ -97,17 +98,14 @@ def main():
 				#st.image('img.jpg', width=60)
 				st.subheader("Available electric cars")
 				st.image('p1.png', width=500)
-				st.image('h2.png', width=500)
-				st.image('h3.png', width=500)
+				st.image('p2.png', width=500)
+				
 				
 # Required to let Streamlit instantiate our web app.  
 if __name__ == '__main__':
 	main()
 
 #streamlit run base_app.py
-#donald  trump appears in fake news
-
-#-1 Sally Kohn’s latest evidence of climate change proves she is ‘not a smart person’ https://t.co/MhkzoGL9Vt via @twitchyteam Need we say more
-#0 Calum: *tweets abt reunitingish w the cast*\n-sees replies begging him to come to their countries-\nCalum: *goes back to rting climate change*
-# 2 researchers have three years climate change before it s late urlweb urlweb
-
+#user_tweet = 'climate change was man made' #negative
+#user_tweet = 'believe in global warming climate change' #nuetral
+#user_tweet = 'climate change australia donald trump' #pro
