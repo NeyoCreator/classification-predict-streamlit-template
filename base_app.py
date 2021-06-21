@@ -42,7 +42,7 @@ def main():
 	# Creates a main title and subheader on your page -
 	# these are static across all pages
 	st.title("Thuto")
-	st.subheader("Predic belives climate change")
+	st.subheader("Predicting how much people belive  in climate change")
 
 	# Creating sidebar with selection box -
 	# you can create multiple pages this way
@@ -79,7 +79,7 @@ def main():
 			# more human interpretable.
 			#st.success("Text Categorized as: {}".format(prediction))
 
-			#st.title(prediction[0])
+			st.title(prediction[0])
 
 			if (prediction[0] == -1) :
 				st.title("Gas cars avaialable")

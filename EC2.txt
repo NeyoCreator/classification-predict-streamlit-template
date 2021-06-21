@@ -1,2 +1,3 @@
 3.248.221.157
-ssh explore-student@<3.248.221.157>
+ssh explore-student@3.248.221.157
+http://3.248.221.157:5000
