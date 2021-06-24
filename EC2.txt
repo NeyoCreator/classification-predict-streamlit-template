@@ -1,7 +1,7 @@
 3.248.221.157
 ssh explore-student@3.248.221.157
 
-ssh explore-student@34.254.247.67
+ssh explore-student@54.216.49.162
 //latest
 
 tmux
@@ -13,3 +13,5 @@ streamlit run --server.port 5000 base_app.py
 #user_tweet = 'climate change australia donald trump' #pro
 
 our website
+
+http://54.216.49.162:5000
