@@ -7,12 +7,14 @@ app = MultiApp()
 
 st.markdown("""
 # What is Thuto?
-Thuto, Is a machine learning model that classifies customers sentiment based on thier social media data.
+Thuto, is a machine learning model that classifies customers sentiment based on thier social media data.
 """)
 
 # Add all your application here
-app.add_app("More about us", about.about_page)
-app.add_app("Research", research.research_page)
-app.add_app("Our projects", base_app.main)
+app.add_app("More about the company", about.about_page)
+app.add_app("Toyota project", base_app.main)
+app.add_app("Our Research", research.research_page)
+
 # The main app
 app.run()
+

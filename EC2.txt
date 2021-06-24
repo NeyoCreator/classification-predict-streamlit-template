@@ -1,6 +1,8 @@
 3.248.221.157
 ssh explore-student@3.248.221.157
-http://3.248.221.157:5000
+
+ssh explore-student@34.254.247.67
+//latest
 
 tmux
 
@@ -9,3 +11,5 @@ streamlit run --server.port 5000 base_app.py
 #user_tweet = 'climate change was man made' #negative
 #user_tweet = 'believe in global warming climate change' #nuetral
 #user_tweet = 'climate change australia donald trump' #pro
+
+our website
